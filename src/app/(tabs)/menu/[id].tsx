@@ -23,8 +23,7 @@ const ProductDetailsScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ title: product.name }} /> // set the header title
-      to product name
+      <Stack.Screen options={{ title: product.name }} />
       <Image source={{ uri: product.image }} style={styles.image} />
       <Text style={styles.selectSize}>Select size</Text>
       <View style={styles.sizeContainer}>
