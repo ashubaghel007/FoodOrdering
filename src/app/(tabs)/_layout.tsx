@@ -1,11 +1,11 @@
+import { useClientOnlyValue } from "@/src/components/useClientOnlyValue";
+import { useColorScheme } from "@/src/components/useColorScheme";
+import Colors from "@/src/constants/Colors";
+import { MaterialIcons } from "@expo/vector-icons";
 import { Link, Tabs } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import React from "react";
 import { Pressable } from "react-native";
-
-import { useClientOnlyValue } from "@/src/components/useClientOnlyValue";
-import { useColorScheme } from "@/src/components/useColorScheme";
-import Colors from "@/src/constants/Colors";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -19,20 +19,15 @@ export default function TabLayout() {
         headerShown: useClientOnlyValue(false, true),
       }}
     >
+      <Tabs.Screen name="index" options={{ href: null }} />
+
       <Tabs.Screen
-        name="index"
+        name="menu"
         options={{
-          title: "Tab One",
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{
-                ios: "chevron.left.forwardslash.chevron.right",
-                android: "code",
-                web: "code",
-              }}
-              tintColor={color}
-              size={28}
-            />
+          title: "Menu",
+          headerShown: false,
+          tabBarIcon: ({ size, color }) => (
+            <MaterialIcons name="restaurant-menu" size={size} color={color} />
           ),
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -51,19 +46,11 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="OrderScreen"
         options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{
-                ios: "chevron.left.forwardslash.chevron.right",
-                android: "code",
-                web: "code",
-              }}
-              tintColor={color}
-              size={28}
-            />
+          title: "Orders",
+          tabBarIcon: ({ size, color }) => (
+            <MaterialIcons name="list" size={size} color={color} />
           ),
         }}
       />
