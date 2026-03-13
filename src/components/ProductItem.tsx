@@ -1,6 +1,6 @@
-//import liraries
+import { router } from "expo-router";
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text } from "react-native";
 
 interface ProductItemProps {
   id: number;
@@ -12,11 +12,14 @@ interface ProductItemProps {
 // create a component
 const ProductItem = ({ id, name, image, price }: ProductItemProps) => {
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={styles.container}
+      onPress={() => router.push(`/menu/${id}`)}
+    >
       <Image source={{ uri: image }} style={styles.image} />
       <Text style={styles.title}>{name}</Text>
       <Text style={styles.price}>${price.toFixed(2)}</Text>
-    </View>
+    </Pressable>
   );
 };
 

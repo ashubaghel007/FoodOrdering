@@ -1,12 +1,15 @@
-//import liraries
+import { useLocalSearchParams } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 // create a component
 const ProductDetailsScreen = () => {
+  const { id } = useLocalSearchParams();
+
   return (
     <View style={styles.container}>
       <Text>ProductDetailsScreen</Text>
+      <Text>Product ID: {id}</Text>
     </View>
   );
 };
@@ -17,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#2c3e50",
+    backgroundColor: "#fffff",
   },
 });
 
