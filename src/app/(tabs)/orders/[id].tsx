@@ -1,11 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-// create a component
-const OrderScreen = () => {
+const OrderDetails = () => {
   return (
     <View style={styles.container}>
-      <Text>OrderScreen</Text>
+      <Text>OrderDetails</Text>
     </View>
   );
 };
@@ -21,4 +20,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default OrderScreen;
+export default OrderDetails;

@@ -30,9 +30,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="OrderScreen"
+        name="orders"
         options={{
           title: "Orders",
+          headerShown: false,
           tabBarIcon: ({ size, color }) => (
             <MaterialIcons name="list" size={size} color={color} />
           ),
