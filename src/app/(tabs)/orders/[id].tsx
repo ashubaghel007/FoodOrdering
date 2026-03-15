@@ -1,23 +1,44 @@
+import orders from "@/assets/data/orders";
+import OrderedItem from "@/src/components/OrderedItem";
+import OrderListItem from "@/src/components/OrderListItem";
+import { Stack, useLocalSearchParams } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 const OrderDetails = () => {
+  const { id } = useLocalSearchParams();
+  const order = orders.find((o) => o.id === Number(id));
+
+  if (!order) {
+    return (
+      <View style={styles.container}>
+        <Text>Order not found</Text>
+      </View>
+    );
+  }
   return (
     <View style={styles.container}>
-      <Text>OrderDetails</Text>
+      <Stack.Screen options={{ title: `Order #${order.id}` }} />
+      <FlatList
+        data={order.order_items}
+        renderItem={({ item }) => <OrderedItem orderItem={item} />}
+        keyExtractor={(item) => item.id.toString()}
+        ListHeaderComponent={<OrderListItem order={order} />}
+        contentContainerStyle={{
+          gap: 5,
+          paddingVertical: 10,
+        }}
+      />
     </View>
   );
 };
 
-// define your styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#2c3e50",
+    backgroundColor: "ffffff",
+    padding: 5,
   },
 });
 
-//make this component available to the app
 export default OrderDetails;

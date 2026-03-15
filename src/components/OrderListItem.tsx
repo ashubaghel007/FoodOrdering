@@ -1,19 +1,21 @@
-import products from "@/assets/data/products";
+import { router } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-const product = products[1];
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { OrderListItemProps } from "../types";
 
 // create a component
-const OrderListItem = () => {
+const OrderListItem = ({ order }: OrderListItemProps) => {
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={styles.container}
+      onPress={() => router.push(`/orders/${order.id}`)}
+    >
       <View style={styles.details}>
-        <Text style={styles.number}>Order #11</Text>
-        <Text style={styles.time}>16 hours ago</Text>
+        <Text style={styles.number}>Order #{order.id}</Text>
+        <Text style={styles.time}>{order.created_at}</Text>
       </View>
-      <Text style={styles.status}>Delivering</Text>
-    </View>
+      <Text style={styles.status}>{order.status}</Text>
+    </Pressable>
   );
 };
 

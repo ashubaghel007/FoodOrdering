@@ -24,7 +24,7 @@ export const OrderStatusList: OrderStatus[] = [
 
 export type OrderStatus = "New" | "Cooking" | "Delivering" | "Delivered";
 
-export type Order = {
+export interface Order {
   id: number;
   created_at: string;
   total: number;
@@ -32,16 +32,16 @@ export type Order = {
   status: OrderStatus;
 
   order_items?: OrderItem[];
-};
+}
 
-export type OrderItem = {
+export interface OrderItem {
   id: number;
   product_id: number;
   products: Product;
   order_id: number;
   size: PizzaSize;
   quantity: number;
-};
+}
 
 export type Profile = {
   id: string;
