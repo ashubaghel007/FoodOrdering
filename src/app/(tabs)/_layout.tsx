@@ -15,6 +15,26 @@ export default function TabLayout() {
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 25,
+          height: 70,
+          borderRadius: 35,
+          backgroundColor: "rgba(49, 114, 234, 0.9)",
+          marginHorizontal: 50,
+          borderWidth: 2,
+        },
+        tabBarItemStyle: {
+          justifyContent: "center",
+          alignItems: "center",
+        },
+        tabBarIconStyle: {
+          width: 64,
+          height: 64,
+          justifyContent: "center",
+          alignItems: "center",
+        },
       }}
     >
       <Tabs.Screen name="index" options={{ href: null }} />
@@ -24,8 +44,12 @@ export default function TabLayout() {
         options={{
           title: "Menu",
           headerShown: false,
-          tabBarIcon: ({ size, color }) => (
-            <MaterialIcons name="restaurant-menu" size={size} color={color} />
+          tabBarIcon: ({ size, focused }) => (
+            <MaterialIcons
+              name="restaurant-menu"
+              size={focused ? 32 : 24}
+              color={"white"}
+            />
           ),
         }}
       />
@@ -34,8 +58,12 @@ export default function TabLayout() {
         options={{
           title: "Orders",
           headerShown: false,
-          tabBarIcon: ({ size, color }) => (
-            <MaterialIcons name="list" size={size} color={color} />
+          tabBarIcon: ({ size, focused }) => (
+            <MaterialIcons
+              name="list"
+              size={focused ? 32 : 24}
+              color={"white"}
+            />
           ),
         }}
       />
@@ -44,8 +72,12 @@ export default function TabLayout() {
         options={{
           title: "Profile",
           headerShown: false,
-          tabBarIcon: ({ size, color }) => (
-            <MaterialIcons name="person" size={size} color={color} />
+          tabBarIcon: ({ size, focused }) => (
+            <MaterialIcons
+              name="person"
+              size={focused ? 32 : 24}
+              color={"white"}
+            />
           ),
         }}
       />
