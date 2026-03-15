@@ -3,6 +3,7 @@ import type { PizzaSize } from "@/src/types";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const pizzaSizes: PizzaSize[] = ["S", "M", "L", "XL"];
 
@@ -22,7 +23,7 @@ const ProductDetailsScreen = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Stack.Screen options={{ title: product.name }} />
       <Image source={{ uri: product.image }} style={styles.image} />
       <Text style={styles.selectSize}>Select size</Text>
@@ -44,7 +45,7 @@ const ProductDetailsScreen = () => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Add to Cart</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   },
   price: {
     marginHorizontal: 20,
-    marginTop: "auto",
+    marginTop: "10%",
     fontSize: 22,
     fontWeight: "bold",
   },
