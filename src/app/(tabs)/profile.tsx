@@ -20,6 +20,7 @@ const Profile = () => {
           gap: 0.5,
           backgroundColor: "transparent",
           marginBottom: 0,
+          paddingHorizontal: 10,
         }}
         ListHeaderComponent={<ProfileHeader user={userData.user} />}
       />

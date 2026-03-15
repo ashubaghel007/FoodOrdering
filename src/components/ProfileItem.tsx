@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#ffffff",
-    height: 70,
+    height: 60,
     width: "100%",
     marginBottom: 5,
     borderRadius: 10,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     borderColor: "#ffffff",
   },
   title: {
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: "semibold",
     color: "#1f0a0a",
   },
