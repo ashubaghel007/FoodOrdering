@@ -23,7 +23,7 @@ const OrderDetails = () => {
         data={order.order_items}
         renderItem={({ item }) => <OrderedItem orderItem={item} />}
         keyExtractor={(item) => item.id.toString()}
-        ListHeaderComponent={<OrderListItem order={order} />}
+        ListHeaderComponent={<OrderListItem order={order} disabled={true} />}
         contentContainerStyle={{
           gap: 5,
           paddingVertical: 10,

@@ -9,7 +9,7 @@ const Index = () => {
     <FlatList
       data={orders}
       keyExtractor={(item) => item.id.toString()}
-      renderItem={({ item }) => <OrderListItem order={item} />}
+      renderItem={({ item }) => <OrderListItem order={item} disabled={false} />}
       contentContainerStyle={{ padding: 10 }}
     />
   );

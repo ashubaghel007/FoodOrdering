@@ -4,11 +4,12 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { OrderListItemProps } from "../types";
 
 // create a component
-const OrderListItem = ({ order }: OrderListItemProps) => {
+const OrderListItem = ({ order, disabled = false }: OrderListItemProps) => {
   return (
     <Pressable
       style={styles.container}
       onPress={() => router.push(`/orders/${order.id}`)}
+      disabled={disabled}
     >
       <View style={styles.details}>
         <Text style={styles.number}>Order #{order.id}</Text>

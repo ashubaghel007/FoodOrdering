@@ -1,0 +1,52 @@
+{
+  "user": {
+    "name": "Ashish Baghel",
+    "email": "baghel.ashish@gmail.com",
+    "avatar": "https://media.licdn.com/dms/image/v2/C5103AQFOAuuJxxrzMg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1544872654449?e=1775088000&v=beta&t=H0MfGNkc4910bVY-sv02uLzHiq80jjtSianZVvKuWfg",
+    "verified": true
+  },
+  "menuOptions": [
+    {
+      "id": 1,
+      "title": "Personal Information",
+      "icon": "person",
+      "screen": "PersonalInformation"
+    },
+    {
+      "id": 2,
+      "title": "My Orders",
+      "icon": "receipt-long",
+      "screen": "Orders"
+    },
+    {
+      "id": 3,
+      "title": "Addresses",
+      "icon": "location-on",
+      "screen": "Addresses"
+    },
+    {
+      "id": 4,
+      "title": "Payment Methods",
+      "icon": "credit-card",
+      "screen": "PaymentMethods"
+    },
+    {
+      "id": 5,
+      "title": "Settings",
+      "icon": "settings",
+      "screen": "Settings"
+    },
+    {
+      "id": 6,
+      "title": "Help & Support",
+      "icon": "help-outline",
+      "screen": "Support"
+    },
+    {
+      "id": 7,
+      "title": "Logout",
+      "icon": "logout",
+      "screen": "Logout"
+    }
+  ]
+}

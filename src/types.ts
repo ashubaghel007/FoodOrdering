@@ -47,3 +47,31 @@ export type Profile = {
   id: string;
   group: string;
 };
+
+export interface User {
+  name: string;
+  email: string;
+  avatar: string;
+  verified: boolean;
+}
+
+export interface MenuOption {
+  id: number;
+  title: string;
+  icon: string;
+  screen: string;
+}
+
+export interface UserData {
+  user: User;
+  menuOptions: MenuOption[];
+}
+
+export interface OrderListItemProps {
+  order: Order;
+  disabled?: boolean;
+}
+
+export interface OrderItemProps {
+  orderItem: OrderItem;
+}
